@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          my reacter kjvkskdfkj
+          my name is gurmeet singh 
         </p>
         <a
           className="App-link"
