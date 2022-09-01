@@ -1,36 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { createRef } from 'react'
-class  App extends React.Component
+import React, { useRef } from 'react'
+import Forward from './Forward'
+function  App ()
 {
-  constructor()
+  const inputrRef=useRef()
+  function pass()
   {
-    super();
-    this.inputRef=createRef();
+     inputrRef.current.value="100"
+     inputrRef.current.focus()
   }
-componentDidMount()
-{
-  //console.warn(this.inputRef.current.value="")
-}
-  getvalue()   
-
-  {
-    console.warn(this.inputRef.current.value)
-    this.inputRef.current.style.color="red"
-    this.inputRef.current.style.backgroundColor="blue"
-  }
-  render()
-  {
-    
-    return (
+      return (
       <div className='App' >   
-             <h1>Ref using in react</h1>  
-            <input type="text" ref={this.inputRef} />
-            <button onClick={()=>this.getvalue()}>ref cheking</button>
+             <h1>using forward ref</h1> 
+             <Forward ref={inputrRef}/>
+             <button onClick={()=>{pass()}}>handle input </button>
      </div>
      
             );
   }
- }
 
 export default App;
