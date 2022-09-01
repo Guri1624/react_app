@@ -1,30 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 function  App ()
 { 
-  let inputRef=useRef(null)
-  let inputRef2=useRef(null)
-  
-  function submitform(e)
-  {
-e.preventDefault()
-console.warn("input filg value=",inputRef.current.value)
-console.warn("input filg value2=",inputRef2.current.value)
-let input3=document.getElementById('input3').value
-console.warn("input  fild value3",input3)
-  }
+ 
       return (
       <div className='App' >   
-             <h1>uncontroled component</h1> 
-             <form onSubmit={submitform}>
-             <input ref={inputRef} type="text"/><br></br>
-             <input ref={inputRef2}type="text"/><br></br>
-             <input id="input3" type="text"/><br></br>
-             <button>click me </button><br></br>
-             </form>
+             <h1>simple HOC!</h1> 
+             <HOC cmp={Counter}/>
+             <HOCgreen cmp={Counter}/>
      </div>
             );
+  }
+  function HOC(props)
+  {
+    return (<h2 style={{backgroundColor:"red",width:100}}><props.cmp/></h2>)
+}
+function HOCgreen(props)
+  {
+    return(<h2 style={{backgroundColor:"green"}}> <props.cmp/></h2>)
+  }
+  function Counter()
+  {
+    const[count,setCount]=useState(0)
+    return <div>
+        <h2>{count}</h2>
+<button onClick={()=>setCount(count+1)}>update</button>
+      </div>
+    
   }
 
 export default App;
