@@ -1,20 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useRef } from 'react'
-import Forward from './Forward'
+import React, { useState } from 'react'
 function  App ()
 {
-  const inputrRef=useRef()
-  function pass()
-  {
-     inputrRef.current.value="100"
-     inputrRef.current.focus()
-  }
+  const [val,setval]=useState("000");
+  const [item,setitem]=useState();
+ 
       return (
       <div className='App' >   
-             <h1>using forward ref</h1> 
-             <Forward ref={inputrRef}/>
-             <button onClick={()=>{pass()}}>handle input </button>
+             <h1>controlled statemnt</h1> 
+             <input type="text" value={val} onChange={(e)=>setval(e.target.value)}/>
+             <h3>show value= {val}</h3>
      </div>
      
             );
