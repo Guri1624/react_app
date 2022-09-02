@@ -3,7 +3,6 @@ function Error()
 {
     const params=useParams();
     const {name}=params;
-    console.warn(name);
     return(
         <div>
         <h1>this is {name} page</h1>
