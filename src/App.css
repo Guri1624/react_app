@@ -6,6 +6,16 @@
   height: 40vmin;
   pointer-events: none;
 }
+.newnev {
+  text-align: right;
+}
+.newnev li{
+  display: inline-block;
+  padding: 20px 10px;
+}
+.nav-link:hover{
+  color: blue;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
